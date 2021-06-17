@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: url("back-photo.jpeg");
+}
+.head {
+  text-align: center;
+  color: whitesmoke;
+  background-color: rgb(38, 38, 100);
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.img-pago-electrónico {
+  width: 260px;
+  padding: 60px 20px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+}
+.box-image {
+  background-color: ivory;
+  display: inline-block;
+}
+.formulario-tarjeta {
+  background-color: ivory;
+  display: inline-block;
+  padding: 25px 25px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  text-align: left;
+}
+#alerta-no-valido {
+  display: hidden;
+  color: red;
+  font-size: 12px;
+}
+main {
+  text-align: center;
+  position: relative;
+  left: 400px;
+  top: 15px;
+  bottom: 0;
+  background-color: ivory;
+  display: inline-block;
+  padding: 25px 30px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));;
+}
+.one {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.description {
+  font-size: 16px;
+  margin: 0;
+  padding-top: 0;
+}
+.data {
+  font-size: 16px;
+}
+.data-input {
+  font-size: 13px;
+  width: 210px;
+  height: 20px;
+}
+#checkbox-y-botones {
+  padding-top: 10px;
+}
+.button {
+  margin-top: 15px;
+  width: 100px;
+  height: 25px;
+  font-size: 14px;
+  line-height: 25px; 
+}
+.foot {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+#nextPage {
+  text-align: left;
+  width: fit-content;
+}
+#pageTwo {
+  width: fit-content;
+  position: relative;
+}
