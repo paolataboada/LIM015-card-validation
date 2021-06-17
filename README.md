@@ -20,7 +20,10 @@
   Los objetivos de los usuarios serán realizar una compra segura, para ello se utiliza el enmascaramiento de los números de su tarjeta, en el que se (pretendía) enviar un correo con la información del pago virtual, mostrando solo los cuatro últimos dígitos de su tarjeta. La tarjeta se valida en base al Algoritmo de Luhn, su misión es proteger contra errores la numeración de las tarjetas así como evitar usos fraudulentos.
 
 ## 3. Primer prototipo de papel
-
+![image](https://user-images.githubusercontent.com/85120257/122319914-f0a3d200-cee6-11eb-9798-8155efd3de75.png)
+![image](https://user-images.githubusercontent.com/85120257/122319926-f8fc0d00-cee6-11eb-8dae-b8e29e359f59.png)
 
 ## 4. Imagen del prototipo final
+![image](https://user-images.githubusercontent.com/85120257/122319969-0b764680-cee7-11eb-9ab1-36e9b5d91e19.png)
+![image](https://user-images.githubusercontent.com/85120257/122319990-16c97200-cee7-11eb-9ba9-61b64c3c104a.png)
 
