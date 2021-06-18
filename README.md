@@ -24,6 +24,6 @@
 ![image](https://user-images.githubusercontent.com/85120257/122319926-f8fc0d00-cee6-11eb-8dae-b8e29e359f59.png)
 
 ## 4. Imagen del prototipo final
-![image](https://user-images.githubusercontent.com/85120257/122319969-0b764680-cee7-11eb-9ab1-36e9b5d91e19.png)
-![image](https://user-images.githubusercontent.com/85120257/122319990-16c97200-cee7-11eb-9ba9-61b64c3c104a.png)
+![image](https://user-images.githubusercontent.com/85120257/122506519-1b178d00-cfc4-11eb-85ff-0a7ec3f76c08.png)
+![image](https://user-images.githubusercontent.com/85120257/122506546-28347c00-cfc4-11eb-9790-a8ff860ba92d.png)
 
