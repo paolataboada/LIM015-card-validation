@@ -28,17 +28,12 @@ body {
   margin-top: 0;
   text-align: left;
 }
-#alerta-no-valido {
-  display: hidden;
-  color: red;
-  font-size: 12px;
-}
 main {
   text-align: center;
   position: relative;
   left: 400px;
   top: 15px;
-  bottom: 0;
+  bottom: 5px;
   background-color: ivory;
   display: inline-block;
   padding: 25px 30px;
@@ -46,7 +41,7 @@ main {
   border-radius: 15px;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));;
 }
-.one {
+h2{
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -72,6 +67,8 @@ main {
   height: 25px;
   font-size: 14px;
   line-height: 25px; 
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .foot {
   text-align: center;
@@ -79,11 +76,35 @@ main {
   margin-top: 15px;
   margin-bottom: 0;
 }
-#nextPage {
+.pageTwo {
+  background-color: ivory;
+  display: inline-block;
+  padding: 20px 40px;
+  padding-bottom: 10px;
+}
+.addCardNumber{
+  font-size: 17px;
+  color: rgb(84, 218, 106);
+}
+table {
   text-align: left;
   width: fit-content;
+  padding: 20px 40px;
 }
-#pageTwo {
-  width: fit-content;
-  position: relative;
+.espacio-izq{
+  padding-left: 80px;
+  text-align: right;
+}
+.pay-button, .back-button{
+  width: 110px;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px; 
+  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.pay-button:hover, .back-button:hover, .button:hover, .pay-button:hover{
+  cursor: pointer;
 }

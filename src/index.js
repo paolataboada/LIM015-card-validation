@@ -6,7 +6,7 @@ const cardValidation = document.getElementById("cardValidation");
 function btnValidar() {
   const cardNumber = document.getElementById("cardNumber").value;
   if(cardNumber.length == 0){
-    alert("Introduzca los datos para continuar")
+    alert("Introduzca los datos para validar.")
     document.getElementById("cardNumber").focus();
   } else {
     return validator.isValid(cardNumber);
@@ -17,59 +17,47 @@ cardValidation.addEventListener("click", btnValidar);
 //Esta función guardará la información del usuario (por el momento aparecerá en un alert)
 const checkbox = document.getElementById("checkbox");
 function checkSaveInfo() {
-  const userInformation1 = document.getElementById("cardNumber").value;
-  const userInformation2 = document.getElementById("cardOwner").value;
-  const userInformation3 = document.getElementById("expirationDate").value;
-  const userInformation4 = document.getElementById("securityCode").value;
-  if(userInformation1.length>0 || userInformation2.length>0 || userInformation3.length>0 || userInformation4.length>0){
-    alert("Información: Tarjeta " + userInformation1 + " Nombre " + userInformation2 + " Fecha "+userInformation3 + " CVV " + userInformation4);
-    return true;
-  } else {
-    alert("No se ha encontrado información");
-    return false;
-  }
+  const userInfo1 = document.getElementById("cardNumber").value;
+  const userInfo2 = document.getElementById("cardOwner").value;
+  const userInfo3 = document.getElementById("expirationDate").value;
+  const userInfo4 = document.getElementById("securityCode").value;
+  if(checkbox.checked && userInfo1.length == 0 && userInfo2.length == 0 && userInfo3.length == 0 && userInfo4.length == 0){
+    alert("No hay datos para guardar.");
+  } else if (checkbox.checked && userInfo1.length !== 0 || userInfo2.length !== 0 || userInfo3.length !== 0 || userInfo4.length !== 0){
+    alert("User information:\nTarjeta: " + userInfo1 +"\n"+ "Nombre: " + userInfo2 +"\n"+ "Fecha: "+userInfo3 + "\n"+ "CVV: " + userInfo4);
+  } 
 }
 checkbox.addEventListener("click", checkSaveInfo);
 
-//Esta función mostrará la segunda página o sección de pago
+//Esta función mostrará la segunda página: "Sección de pago"
 const continueProcess = document.getElementById("continueProcess");
-const general = document.getElementById("general");
-function btnContinuar() {
-  const paymentSection = document.getElementById("pageTwo");
-  const userInformation1 = document.getElementById("cardNumber").value;
-  const userInformation2 = document.getElementById("cardOwner").value;
-  const userInformation3 = document.getElementById("expirationDate").value;
-  const userInformation4 = document.getElementById("securityCode").value;
-  if(userInformation1.length>0 || userInformation2.length>0 || userInformation3.length>0 || userInformation4.length>0){
-    return paymentSection.style.display="", general.style.display="none";
+function showPageTwo() {
+  const cardNumber = document.getElementById("cardNumber").value;
+  const userInfo2 = document.getElementById("cardOwner").value;
+  const userInfo3 = document.getElementById("expirationDate").value;
+  const userInfo4 = document.getElementById("securityCode").value;
+  if(cardNumber.length>10 && userInfo2.length!==0 && userInfo3.length!==0 && userInfo4.length!==0){
+    document.getElementById("pageOne").style.display = "none";
+    document.getElementById("pageTwo").style.display = "block";
+    let addCardNumber = document.getElementById("addCardNumber");
+    addCardNumber.innerHTML = " Pagar con Nro. de Tarjeta: " + validator.maskify(cardNumber)+"</br>Nombre de Usuario: " + userInfo2;
+    //Agregando los montos a pagar
+    let addSubtotal = document.getElementById("addSubtotal");
+    addSubtotal.innerHTML = "s/. "+ "205.00";
+    let addShipping = document.getElementById("addShipping");
+    addShipping.innerHTML = "s/. "+ "30.00";
+    let addTotal = document.getElementById("addTotal");
+    addTotal.innerHTML = "s/. "+ "235.00";
   } else {
-    alert("Debe ingresar la información solicitada")
+    alert("No es posible continuar. Ingrese la información solicitada.")
   }
 }
-continueProcess.addEventListener("click", btnContinuar);
+continueProcess.addEventListener("click", showPageTwo);
 
-//Esta función esconderá los últimos dígitos de la tarjeta
-const ocultarTarjeta = document.getElementById("ocultarTarjeta");
-function btnOcultar(){
-  const cardNumber = document.getElementById("cardNumber").value;
-  let finalNumber = document.getElementById("nextPage");
-  let finalNumberContent = document.createElement("li");
-  finalNumberContent.innerHTML = "Pagar con: " + validator.maskify(cardNumber);
-  finalNumber.insertAdjacentElement("afterbegin", finalNumberContent);
-  
-  let finalSubtotal = document.getElementById("nextPage");
-  let finalSubtotalContent = document.createElement("li");
-  finalSubtotalContent.innerHTML = "Subtotal: s/. 250.00";
-  finalSubtotal.insertAdjacentElement("beforeend", finalSubtotalContent);
-  
-  let finalShipping = document.getElementById("nextPage");
-  let finalShippingContent = document.createElement("li");
-  finalShippingContent.innerHTML = "Envío: s/. 30.00" ;
-  finalShipping.insertAdjacentElement("beforeend", finalShippingContent);
-
-  let finalTotal = document.getElementById("nextPage");
-  let finalTotalContent = document.createElement("li");
-  finalTotalContent.innerHTML = "Total: s/. 280.00 ";
-  finalTotal.insertAdjacentElement("beforeend", finalTotalContent);
+//Esta función se utilizará para regresar a la página anterior.
+const previousPage = document.getElementById("previousPage");
+function btnRegresar() {
+  document.getElementById("pageOne").style.display = "block";
+  document.getElementById("pageTwo").style.display = "none";
 }
-ocultarTarjeta.addEventListener("click",btnOcultar);
+previousPage.addEventListener("click", btnRegresar);

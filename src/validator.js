@@ -25,7 +25,7 @@ const validator = {
     let cuatroDigitos = cardNumber.slice(-4);
     let ocultarDigitos = cardNumber.slice(0,-4);
     let enmascarar = ocultarDigitos.replace(ocultarDigitos,"#").repeat(ocultarDigitos.length) + cuatroDigitos;
-      alert ("Pagar con " + enmascarar);
+      alert ("Solo se mostrarán los cuatro últimos dígitos de su tarjeta por seguridad.");
       return enmascarar;
     }
 };

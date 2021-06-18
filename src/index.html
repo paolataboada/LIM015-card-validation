@@ -14,8 +14,8 @@
     </header>
 
     <main>
-      <section id="general">
-        <h2 class="one">Información de la Tarjeta</h2>
+      <section id="pageOne" class="pageOne">
+        <h2>Información de la Tarjeta</h2>
         <span class="description">Por favor complete la siguiente información:</span><br>
         <!-- Sección para imagen -->
         <section class="box-image">
@@ -54,16 +54,26 @@
           </section>
           <div class="foot">© 2021 Proyect Card Validation by Paola Taboada</div>
         </form>
-
       </section>
       
       <!-- Siguiente página -->
-      <section id="pageTwo" style="display: none">
-          <h2>Resumen del pedido:</h2>
-          <ul id="nextPage"></ul>
-          <div>
-              <input class="button" id="ocultarTarjeta" type="submit" value="Mostrar">
-          </div>
+      <section id="pageTwo" class="pageTwo" style="display: none">
+        <h2>Resumen del pedido:</h2>
+        <span id="addCardNumber" class="addCardNumber"></span><br>
+        <table>
+          <tr><th>Concepto</th>
+              <th class="espacio-izq">Monto</th></tr>
+          <tr><td>Subtotal:</td>
+              <td id="addSubtotal" class="espacio-izq"></td></tr>
+          <tr><td>Envío:</td>
+              <td id="addShipping" class="espacio-izq"></td></tr>
+          <tr><td>Total a pagar:</td>
+              <td id="addTotal" class="espacio-izq"></td></tr>    
+        </table>
+        <div>
+          <input class="back-button" id="previousPage" type="button" value="Regresar">
+          <input class="pay-button" id="ocultarTarjeta" type="submit" value="Pagar">
+        </div>
       </section>
     </main>
 
