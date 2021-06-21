@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Tarjeta de crédito válida</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="head">
+      <h1 class="head">Shelter: Tus compras seguras en línea</h1>
+      <span class="head">Continuar procesando su pago...</span>
+    </header>
+
+    <main>
+      <section id="pageOne" class="pageOne">
+        <h2>Información de la Tarjeta</h2>
+        <span class="description">Por favor complete la siguiente información:</span><br>
+        <!-- Sección para imagen -->
+        <section class="box-image">
+          <img class="img-pago-electrónico" alt="Comprando en línea" src="electronic-card-payment.png">
+        </section>
+
+        <!-- Información sobre el usuario -->
+        <form class="formulario-tarjeta">
+          <div>
+            <label class="data" for="cardNumber">Número de la Tarjeta:</label><br>
+            <input onkeypress="return event.charCode>=48 && event.charCode <=57" class="data-input" type="text" id="cardNumber" placeholder="Ej. XXXX XXXX XXXX XXXX" maxlength="16">
+          </div>
+          <div>
+            <label class="data" for="cardOwner">Titular de la Tarjeta:</label><br>
+            <input class="data-input" type="text" id="cardOwner" placeholder="Ej. Paola Vitalia Taboada Alanoca" maxlength="40"><br>
+          </div>
+          <div>
+            <label class="data" for="expirationDate">Fecha de expiración:</label><br>
+            <input class="data-input" type="text" id="expirationDate" placeholder="Ej. 06/24" maxlength="5"><br>
+          </div>
+          <div>
+            <label class="data" for="securityCode">CVV:</label><br>
+            <input class="data-input" type="text" id="securityCode" placeholder="Ej. XXX" maxlength="4"><br>
+          </div>
+
+          <!-- Sección para el checkbox y los botones-->
+          <section id="checkbox-y-botones">
+            <div>
+              <input type="checkbox" id ="checkbox" value="SaveCard">
+              <label class="data" for="checkbox"> Guardar tarjeta</label><br>
+            </div>
+            <div>
+              <input class="button" id="cardValidation" type="button" value="Validar">
+              <input class="button" id="continueProcess" type="button" value="Continuar">
+            </div>
+          </section>
+          <div class="foot">© 2021 Proyect Card Validation by Paola Taboada</div>
+        </form>
+      </section>
+      
+      <!-- Siguiente página -->
+      <section id="pageTwo" class="pageTwo" style="display: none">
+        <h2>Resumen del pedido:</h2>
+        <span id="addCardNumber" class="addCardNumber"></span><br>
+        <table>
+          <tr><th>Concepto</th>
+              <th class="espacio-izq">Monto</th></tr>
+          <tr><td>Subtotal:</td>
+              <td id="addSubtotal" class="espacio-izq"></td></tr>
+          <tr><td>Envío:</td>
+              <td id="addShipping" class="espacio-izq"></td></tr>
+          <tr><td>Total a pagar:</td>
+              <td id="addTotal" class="espacio-izq"></td></tr>    
+        </table>
+        <div>
+          <input class="back-button" id="previousPage" type="button" value="Regresar">
+          <input class="pay-button" id="ocultarTarjeta" type="submit" value="Pagar">
+        </div>
+      </section>
+    </main>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
