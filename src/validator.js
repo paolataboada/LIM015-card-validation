@@ -13,10 +13,8 @@ const validator = {
     let sumaImpar = posicionImpar.reduce(((a, b) => a+b),0);
     const sumaTotal = sumaPar1 + sumaPar2 + sumaImpar;
     if (sumaTotal%10===0){
-      alert ("La tarjeta ha sido verificada correctamente.");
       return true;
     } else {
-      alert ("El número introducido no es válido.");
       return false;
     }
   },
@@ -25,7 +23,6 @@ const validator = {
     let cuatroDigitos = cardNumber.slice(-4);
     let ocultarDigitos = cardNumber.slice(0,-4);
     let enmascarar = ocultarDigitos.replace(ocultarDigitos,"#").repeat(ocultarDigitos.length) + cuatroDigitos;
-      alert ("Solo se mostrarán los cuatro últimos dígitos de su tarjeta por seguridad.");
       return enmascarar;
     }
 };
