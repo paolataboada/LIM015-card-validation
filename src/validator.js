@@ -13,8 +13,10 @@ const validator = {
     let sumaImpar = posicionImpar.reduce(((a, b) => a+b),0);
     const sumaTotal = sumaPar1 + sumaPar2 + sumaImpar;
     if (sumaTotal%10===0){
+      alert("La tarjeta ha sido verificada correctamente 😀👍." );
       return true;
     } else {
+      alert ("El número introducido no es válido.");
       return false;
     }
   },

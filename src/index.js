@@ -23,8 +23,11 @@ function checkSaveInfo() {
   const userInfo4 = document.getElementById("securityCode").value;
   if(checkbox.checked && userInfo1.length == 0 && userInfo2.length == 0 && userInfo3.length == 0 && userInfo4.length == 0){
     alert("No hay datos para guardar.");
+    checkbox.checked = false
   } else if (checkbox.checked && userInfo1.length !== 0 || userInfo2.length !== 0 || userInfo3.length !== 0 || userInfo4.length !== 0){
-    alert("User information:\nTarjeta: " + userInfo1 +"\n"+ "Nombre: " + userInfo2 +"\n"+ "Fecha: "+userInfo3 + "\n"+ "CVV: " + userInfo4);
+    alert("La información ha sido guardada ✔.");
+    localStorage.setItem('Credit_Card', userInfo1);
+    localStorage.setItem('User_Name', userInfo2);
   } 
 }
 checkbox.addEventListener("click", checkSaveInfo);
@@ -59,5 +62,10 @@ const previousPage = document.getElementById("previousPage");
 function btnRegresar() {
   document.getElementById("pageOne").style.display = "block";
   document.getElementById("pageTwo").style.display = "none";
+  document.getElementById("pageOne").style.paddingLeft = "30px";
 }
 previousPage.addEventListener("click", btnRegresar);
+
+//Esta función se utilizará para ir a la página siguiente.
+const nextPage = document.getElementById("nextPage");
+nextPage.addEventListener("click", () => alert('La próxima vista todavía está en construcción 🧰⚒️.'));
